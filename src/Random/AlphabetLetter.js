@@ -4,7 +4,7 @@ const letter2 = prompt('Digite outra letra');
 
 //Arrays do alfabeto:
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const alphabetUp = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+const alphabetUp = alphabet.map((letter) => letter.toUpperCase());
 console.log(alphabetUp);
 
 function distanceBetweenTwoLetters() {
