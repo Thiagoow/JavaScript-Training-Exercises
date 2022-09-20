@@ -41,7 +41,7 @@ for (let i = 0; i < total; i++) {
 console.table(fi);
 
 for (const i in fi) {
-  const percent = (fi[i] / total) * 100;
+  const percent = Number((fi[i] / total).toFixed(2)) * 100;
   fr[i] = `${percent}%`;
 }
 console.table(fr);
