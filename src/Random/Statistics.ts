@@ -11,17 +11,6 @@ const max = ordered[total - 1];
 const amp = max - min;
 console.log(`Amplitude: ${amp}`);
 
-// Quartiles:
-const q1 = ordered[Math.floor(total / 4)];
-const q2 = ordered[Math.floor(total / 2)];
-const q3 = ordered[Math.floor((total * 3) / 4)];
-console.log(`Quartis: ${q1}, ${q2} & ${q3}`);
-
-// Average/mean:
-const sum = ordered.reduce((a, b) => a + b);
-const mean = Math.floor(sum / total);
-console.log(`Média: ${mean}`);
-
 const median =
   total % 2 !== 0
     ? // If is odd:
@@ -29,6 +18,17 @@ const median =
     : //If is even, average the 2 middle values:
       (ordered[total / 2 - 1] + ordered[total / 2]) / 2;
 console.log(`Mediana: ${median}`);
+
+// Quartiles:
+const q1 = ordered[Math.floor(total / 4)];
+const q3 = ordered[Math.floor((total * 3) / 4)];
+console.log(`Quartis: ${q1}, ${median} & ${q3}`);
+
+// Average/mean:
+const sum = ordered.reduce((a, b) => a + b);
+console.log('Soma: ' + sum);
+const mean = sum / total;
+console.log(`Média: ${mean}`);
 
 // Absolute & Relative Frequency:
 const fi = {};
