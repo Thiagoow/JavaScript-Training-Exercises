@@ -1,7 +1,7 @@
-const nums: number[] = [1, 1, 1, 1];
+const nums = [1, 1, 1, 1];
 
-function runningSum(nums: number[]): number[] {
-  let result: number[] = new Array(nums.length);
+function runningSum(nums: number[]) {
+  let result = new Array(nums.length);
   result[0] = nums[0];
 
   for (let i = 1; i < nums.length; i++) {

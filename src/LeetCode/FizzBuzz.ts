@@ -1,4 +1,4 @@
-function FizzBuzz(times: number): string[] {
+function FizzBuzz(times: number) {
   let result: string[] = [];
 
   for (let i = 1; i <= times; i++) {
