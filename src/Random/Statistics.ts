@@ -38,22 +38,24 @@ for (let i = 0; i < total; i++) {
   const value = ordered[i];
   fi[value] ? fi[value]++ : (fi[value] = 1);
 }
-console.log('Frequência Absoluta (fi):');
+console.warn('Frequência Absoluta (fi):');
 console.table(fi);
 
 for (const i in fi) {
   const percent = Number((fi[i] / total).toFixed(2)) * 100;
   fr[i] = `${percent}%`;
 }
-console.log('Frequência Relativa (fr):');
+console.warn('Frequência Relativa (fr):');
 console.table(fr);
 
 // Variance, Stantard Deviation & Coefficient of Variation:
 const squareDifferences = data.map((value) => Math.pow(value - average, 2));
 const sumSquareDifferences = squareDifferences.reduce((a, b) => a + b);
-console.log('Diferenças ao quadrado (média - x)²');
+console.warn('Diferenças ao quadrado (média - x)²');
 console.table(squareDifferences);
-console.log(`Soma Diferenças (média - x)²: ${sumSquareDifferences}`);
+console.log(
+  `Soma diferenças ao quadrado (média - x)²: ${sumSquareDifferences}`
+);
 
 const variance = sumSquareDifferences / total;
 const standardDeviation = Math.sqrt(variance);
