@@ -1,8 +1,6 @@
-//Entry values of the variables:
-const letter1 = prompt('Digite uma letra');
-const letter2 = prompt('Digite outra letra');
+const letter1 = prompt('Type a letter');
+const letter2 = prompt('Type another letter');
 
-//Arrays do alfabeto:
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const alphabetUp = alphabet.map((letter) => letter.toUpperCase());
 console.log(alphabetUp);
@@ -12,26 +10,26 @@ function distanceToLastLetter(letra1) {
 
   const typeOfVar = typeof letra1;
   /* Verifying with objet constructor:
-  Object.prototype.toString.call(letra1) === "[object Number]"; 
+  Object.prototype.toString.call(letra1) === "[object Number]";
   */
 
   if (isString) {
     let exists = alphabet.indexOf(letra1);
-    //+1 pq array começa em 0:
+    // +1 to account for array starting at 0
     const res = alphabet.length - (exists + 1);
 
     console.log(
-      `A distância de "${letra1.toUpperCase()}" até 
-    "${alphabet.slice(-1)[0].toUpperCase()}" é de ${res}`
+      `The distance between "${letra1.toUpperCase()}" to
+    "${alphabet.slice(-1)[0].toUpperCase()}" is ${res} letters`
     );
   } else if (typeOfVar === 'number') {
-    console.log('Digite uma letra, não um número❗');
+    console.log('Type a letter, not a number❗');
   } else if (!isString) {
-    console.log('Digite uma letra, não outra coisa 🤨');
+    console.log('Type a letter, not another thing');
   } else if (letra1 === '' || ' ') {
-    console.log('Digite uma letra do alfabeto');
+    console.log('Type a letter from the alphabet');
   } else {
-    console.log('Q? 🤔');
+    console.log('how did you get here?');
   }
 }
 distanceToLastLetter(letter1);
@@ -46,18 +44,17 @@ function distanceBetweenTwoLetters() {
   }
 
   if (valid) {
-    //+1 pq array começa em 0:
     const indexOfFirst = alphabet.indexOf(letter1) + 1;
     const indexOfLast = alphabet.indexOf(letter2) + 1;
 
-    //-1 pq é quantas letras existem entre essas letras:
+    // -1 to account for the number of letters between the two letters
     const res = indexOfLast - indexOfFirst - 1;
 
     console.log(
-      `A distância entre "${letter1.toUpperCase()}" e "${letter2.toUpperCase()}" é de ${res} letras`
+      `The distance between "${letter1.toUpperCase()}" and "${letter2.toUpperCase()}" is ${res} letter(s)`
     );
   } else {
-    console.log('Ambos ou 1 dos valores recebidos não era uma letra válida❗');
+    console.log('Both or one of the inputs was not a valid letter❗');
   }
 }
 distanceBetweenTwoLetters();
