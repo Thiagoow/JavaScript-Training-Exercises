@@ -1,22 +1,19 @@
-function FizzBuzz(times: number) {
-  let result: string[] = [];
+fizzBuzz(15);
 
-  for (let i = 1; i <= times; i++) {
-    let output: string = '';
+function fizzBuzz(n: number): string[] {
+  const result: string[] = [];
+
+  for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      output += 'FizzBuzz';
+      result.push('FizzBuzz');
     } else if (i % 3 === 0) {
-      output += 'Fizz';
+      result.push('Fizz');
     } else if (i % 5 === 0) {
-      output += 'Buzz';
+      result.push('Buzz');
     } else {
-      output += i;
+      result.push(i.toString());
     }
-    result = [...result, output];
   }
-
+  console.log(result.join('\n'));
   return result;
 }
-
-console.log(FizzBuzz(15));
-// Run this function ☝🏽 times
