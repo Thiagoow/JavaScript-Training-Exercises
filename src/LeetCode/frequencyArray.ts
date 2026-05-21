@@ -86,9 +86,9 @@ function sortFrequencyLogRank({
 
 // Example usage
 const { sorted, element, groupsByRank } = sortFrequencyLogRank({
-  input: '-5 10 -5 10 3 -5 10 -2 -2',
+  input: '-2 6 0 -2 8 6 6 4 8',
   mode: 'minElementByFreq',
-  rank: 0
+  rank: 1
 });
 
 console.log(`element: ${element}`);
